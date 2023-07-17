@@ -34,7 +34,7 @@ document.querySelector('body').addEventListener('keydown', function(event){
 });
 
 document.querySelector('body').addEventListener('keydown', (event) => {
-    let elem = document.getElementById('key_1');
+    let elem = document.getElementById('key1');
     console.log('entro')
     console.log(color);
     if(event.key === 'a'){
@@ -51,7 +51,7 @@ document.querySelector('body').addEventListener('keydown', (event) => {
     }
 });
 document.addEventListener('keydown', (event) => {
-    let elem = document.getElementById('key_2');
+    let elem = document.getElementById('key2');
     if(event.key === 'q'){
         color = 'skyblue';
         elem.style.backgroundColor = color;

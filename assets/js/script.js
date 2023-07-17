@@ -5,12 +5,12 @@
 // ele = document.getElementById("ele1")
 // ele.addEventListener("click", pintar);
 
-let pintar = function(elem, color) {
+let pintar = function(elem, color = 'yellow') {
                 elem.style.backgroundColor = color
             } 
 
-ele = document.getElementById("ele1")
+let ele = document.getElementById("ele1")
 ele.style.backgroundColor = 'green'
 ele.addEventListener("click", function(){
-    pintar(ele, 'yellow');
+    pintar(ele);
 });
