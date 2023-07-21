@@ -1,67 +1,84 @@
-// variable guarda color
-let color;
+// variables
+let color = '';
+let colorear = '';
 
- let cambiarColor = (elemento) =>  {
+let elem1 = document.querySelector('#div_1');
+let elem2 = document.querySelector('#div_2');
+let elem3 = document.querySelector('#div_3');
+let elem4 = document.querySelector('#div_4');
+let texto1 = document.querySelector('#texto_1');
+let texto2 = document.querySelector('#texto_2');
+
+
+let cambiarColor = (elemento) =>  {
                     elemento.style.backgroundColor = 'black';
                 }      
 
-document.querySelector('#div__1').addEventListener('click', function() {
-    cambiarColor(this);
+elem1.addEventListener('click', function() {
+    cambiarColor(elem1);
 });
-document.querySelector('#div__2').addEventListener('click', function(){
-    cambiarColor(this);
+elem2.addEventListener('click', function(){
+    cambiarColor(elem2);
 });
-document.querySelector('#div__3').addEventListener('click', function () {
-    cambiarColor(this);
+elem3.addEventListener('click', function () {
+    cambiarColor(elem3);
 });
-document.querySelector('#div__4').addEventListener('click', function () {
-    cambiarColor(this);
+elem4.addEventListener('click', function () {
+    cambiarColor(elem4);
 });
 
-document.querySelector('body').addEventListener('keydown', function(event){
+function changeColor(event){
     let elem = document.querySelector('#key');
-    if(event.key === 'a'){
-        elem.style.backgroundColor = 'pink';
-    }
-    else if(event.key === 's'){
-        color = 'orange'
-        elem.style.backgroundColor = color;
-    }
-    else if(event.key === 'd'){
-        color = 'skyblue';
-        elem.style.backgroundColor = color;
-    }
-});
+    let evento = event.key.toLowerCase();
+    if(evento === 'a' || evento === 's' || evento === 'd'){
+        if(event.key === 'a'){
+            color = 'pink';
+        }
+        else if(event.key === 's'){
+            color = 'orange';
+        }
+        else if(event.key === 'd'){
+            color = 'skyblue';
+        }
 
-document.querySelector('body').addEventListener('keydown', (event) => {
-    let elem = document.getElementById('key1');
-    console.log('entro')
-    console.log(color);
-    if(event.key === 'a'){
-        color = 'purple';
-        elem.style.backgroundColor = color; 
+        if(color != ''){
+            elem.style.backgroundColor = color;
+            texto1.textContent = `Se asigno el color ${color} a la letra ${event.key}`; 
+        }
     }
-    else if(event.key === 's'){
-        color = 'grey';
-        elem.style.backgroundColor = color;
+}
+
+document.addEventListener('keydown', changeColor);
+
+function changeColorB(event){
+    let elem =  document.getElementById('padre');
+    let evento = event.key.toLowerCase();
+
+   if(evento === 'q' || evento === 'w' || evento === 'e'){
+    const nuevoElem = document.createElement('div');
+    nuevoElem.setAttribute('id', 'key');
+    nuevoElem.style.height = '200px';
+    nuevoElem.style.width = '200px';
+    nuevoElem.style.borderColor = 'black';
+    nuevoElem.style.borderWidth = '1px';
+    nuevoElem.style.boxSizing = 'border-box';
+    nuevoElem.style.margin = '5px';
+    if(evento === 'q'){
+        colorear = 'yellow';
     }
-    else if(event.key === 'd'){
-        color = 'pink'
-        elem.style.backgroundColor = color;
+    else if(evento === 'w'){
+        colorear = 'blue';
     }
-});
-document.addEventListener('keydown', (event) => {
-    let elem = document.getElementById('key2');
-    if(event.key === 'q'){
-        color = 'skyblue';
-        elem.style.backgroundColor = color;
+    else if(evento === 'e'){
+        colorear = 'brown';
     }
-    else if(event.key === 'w'){
-        color = 'orange';
-        elem.style.backgroundColor = color;
+    
+    if(colorear != ''){
+        nuevoElem.style.backgroundColor = colorear;
+        elem.appendChild(nuevoElem);
+        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`; 
     }
-    else if( event.key === 'e'){
-        color = 'brown'
-        elem.style.backgroundColor = color;
-    }
-});
+   }
+}
+
+document.addEventListener('keydown', changeColorB);
