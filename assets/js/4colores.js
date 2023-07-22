@@ -30,20 +30,24 @@ elem4.addEventListener('click', function () {
 function changeColorA(event){
     let elem = document.querySelector('#key');
     let evento = event.key.toLowerCase();
+    let colorEspa = '';
     if(evento === 'a' || evento === 's' || evento === 'd'){
         if(event.key === 'a'){
             color = 'pink';
+            colorEspa = 'Rosado';
         }
         else if(event.key === 's'){
             color = 'orange';
+            colorEspa = 'Naranjo';
         }
         else if(event.key === 'd'){
             color = 'skyblue';
+            colorEspa = 'Celeste';
         }
 
         if(color != ''){
             elem.style.backgroundColor = color;
-            texto1.textContent = `Se asigno el color ${color} a la letra ${event.key}`; 
+            texto1.textContent = `Se asigno el color ${colorEspa} a la letra ${event.key}`; 
         }
     }
 }
@@ -53,16 +57,20 @@ function changeColorB(event){
     let elementoKey1 = document.querySelector('#key1');
     let evento = event.key.toLowerCase(); 
     let nuevoElem = document.createElement('div');
+    let colorEspanyol = '';
 
     if(evento === 'q' || evento === 'w' || evento === 'e'){
         if(evento === 'q'){
             colorear = 'yellow';
+            colorEspanyol = 'Amarillo';
         }
         else if(evento === 'w'){
             colorear = 'blue';
+            colorEspanyol = 'Azul';
         }
         else if(evento === 'e'){
             colorear = 'brown';
+            colorEspanyol = 'Café'
         }
 
         if(document.querySelector('#key1') === null){
@@ -76,17 +84,15 @@ function changeColorB(event){
             nuevoElem.style.margin = '5px';
             nuevoElem.style.backgroundColor = colorear;
             elem.appendChild(nuevoElem);
-            texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
+            texto2.textContent = `Se asigno el color ${colorEspanyol} a la letra ${event.key}`;
              
         }
         else{
             elementoKey1.style.backgroundColor = colorear;
              elem.appendChild(nuevoElem);
-        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
+        texto2.textContent = `Se asigno el color ${colorEspanyol} a la letra ${event.key}`;
         }
-    }
-
-    
+    }    
 }
 
 document.addEventListener('keydown', changeColorA);
