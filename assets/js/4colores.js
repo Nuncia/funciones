@@ -64,26 +64,29 @@ function changeColorB(event){
         else if(evento === 'e'){
             colorear = 'brown';
         }
+
+        if(document.querySelector('#key1') === null){
+           
+            nuevoElem.setAttribute('id', 'key1');
+            nuevoElem.style.height = '200px';
+            nuevoElem.style.width = '200px';
+            nuevoElem.style.borderColor = 'black';
+            nuevoElem.style.borderWidth = '1px';
+            nuevoElem.style.boxSizing = 'border-box';
+            nuevoElem.style.margin = '5px';
+            nuevoElem.style.backgroundColor = colorear;
+            elem.appendChild(nuevoElem);
+            texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
+             
+        }
+        else{
+            elementoKey1.style.backgroundColor = colorear;
+             elem.appendChild(nuevoElem);
+        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
+        }
     }
 
-    if(document.querySelector('#key1') === null){
-           
-        nuevoElem.setAttribute('id', 'key1');
-        nuevoElem.style.height = '200px';
-        nuevoElem.style.width = '200px';
-        nuevoElem.style.borderColor = 'black';
-        nuevoElem.style.borderWidth = '1px';
-        nuevoElem.style.boxSizing = 'border-box';
-        nuevoElem.style.margin = '5px';
-        nuevoElem.style.backgroundColor = colorear;
-        
-         
-    }
-    else{
-        elementoKey1.style.backgroundColor = colorear;
-    }
-    elem.appendChild(nuevoElem);
-    texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
+    
 }
 
 document.addEventListener('keydown', changeColorA);
