@@ -52,6 +52,7 @@ function changeColorB(event){
     let elem =  document.getElementById('padre');
     let elementoKey1 = document.querySelector('#key1');
     let evento = event.key.toLowerCase(); 
+    let nuevoElem = document.createElement('div');
 
     if(evento === 'q' || evento === 'w' || evento === 'e'){
         if(evento === 'q'){
@@ -63,27 +64,26 @@ function changeColorB(event){
         else if(evento === 'e'){
             colorear = 'brown';
         }
-    
-        if(elementoKey1 == null){
-            let nuevoElem = document.createElement('div');
-            nuevoElem.setAttribute('id', 'key1');
-            nuevoElem.style.height = '200px';
-            nuevoElem.style.width = '200px';
-            nuevoElem.style.borderColor = 'black';
-            nuevoElem.style.borderWidth = '1px';
-            nuevoElem.style.boxSizing = 'border-box';
-            nuevoElem.style.margin = '5px';
-            nuevoElem.style.backgroundColor = colorear;
-            elem.appendChild(nuevoElem);
-             
-        }
-        else{
-            console.log('entro')
-            elementoKey1.style.backgroundColor = colorear;
-        }
-
-        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
     }
+
+    if(document.querySelector('#key1') === null){
+           
+        nuevoElem.setAttribute('id', 'key1');
+        nuevoElem.style.height = '200px';
+        nuevoElem.style.width = '200px';
+        nuevoElem.style.borderColor = 'black';
+        nuevoElem.style.borderWidth = '1px';
+        nuevoElem.style.boxSizing = 'border-box';
+        nuevoElem.style.margin = '5px';
+        nuevoElem.style.backgroundColor = colorear;
+        
+         
+    }
+    else{
+        elementoKey1.style.backgroundColor = colorear;
+    }
+    elem.appendChild(nuevoElem);
+    texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
 }
 
 document.addEventListener('keydown', changeColorA);
