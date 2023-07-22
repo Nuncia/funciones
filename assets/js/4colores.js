@@ -27,7 +27,7 @@ elem4.addEventListener('click', function () {
     cambiarColor(elem4);
 });
 
-function changeColor(event){
+function changeColorA(event){
     let elem = document.querySelector('#key');
     let evento = event.key.toLowerCase();
     if(evento === 'a' || evento === 's' || evento === 'd'){
@@ -48,37 +48,43 @@ function changeColor(event){
     }
 }
 
-document.addEventListener('keydown', changeColor);
-
 function changeColorB(event){
     let elem =  document.getElementById('padre');
-    let evento = event.key.toLowerCase();
+    let elementoKey1 = document.querySelector('#key1');
+    let evento = event.key.toLowerCase(); 
 
-   if(evento === 'q' || evento === 'w' || evento === 'e'){
-    const nuevoElem = document.createElement('div');
-    nuevoElem.setAttribute('id', 'key');
-    nuevoElem.style.height = '200px';
-    nuevoElem.style.width = '200px';
-    nuevoElem.style.borderColor = 'black';
-    nuevoElem.style.borderWidth = '1px';
-    nuevoElem.style.boxSizing = 'border-box';
-    nuevoElem.style.margin = '5px';
-    if(evento === 'q'){
-        colorear = 'yellow';
-    }
-    else if(evento === 'w'){
-        colorear = 'blue';
-    }
-    else if(evento === 'e'){
-        colorear = 'brown';
-    }
+    if(evento === 'q' || evento === 'w' || evento === 'e'){
+        if(evento === 'q'){
+            colorear = 'yellow';
+        }
+        else if(evento === 'w'){
+            colorear = 'blue';
+        }
+        else if(evento === 'e'){
+            colorear = 'brown';
+        }
     
-    if(colorear != ''){
-        nuevoElem.style.backgroundColor = colorear;
-        elem.appendChild(nuevoElem);
-        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`; 
+        if(elementoKey1 == null){
+            let nuevoElem = document.createElement('div');
+            nuevoElem.setAttribute('id', 'key1');
+            nuevoElem.style.height = '200px';
+            nuevoElem.style.width = '200px';
+            nuevoElem.style.borderColor = 'black';
+            nuevoElem.style.borderWidth = '1px';
+            nuevoElem.style.boxSizing = 'border-box';
+            nuevoElem.style.margin = '5px';
+            nuevoElem.style.backgroundColor = colorear;
+            elem.appendChild(nuevoElem);
+             
+        }
+        else{
+            console.log('entro')
+            elementoKey1.style.backgroundColor = colorear;
+        }
+
+        texto2.textContent = `Se asigno el color ${colorear} a la letra ${event.key}`;
     }
-   }
 }
 
+document.addEventListener('keydown', changeColorA);
 document.addEventListener('keydown', changeColorB);

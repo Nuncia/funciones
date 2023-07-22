@@ -8,8 +8,8 @@
     <title>Colores</title>
 </head>
 <body style="box-sizing: border-box;">
-    <p class="fs-3" style="text-align: start; margin-left: 320px; color: black; margin-top: 43px; ">Presioname y cambiare a color negro </p>
-    <div class="container d-flex justify-content-start align-content-center" style="min-height: 41vh;">
+    <p class="fs-5 d-flex justify-content-center align-items-center" style="color: black; margin-top: 43px;">Presioname y cambiare a color negro </p>
+    <div class="container d-flex justify-content-center align-content-center" style="min-height: 35vh; margin-left: 353px; min-width: 100vh;">
         <div class="cuadrado me-4 d-flex justify-content-center align-items-center" id="div_1" style="width: 200px; height: 200px; background-color: blue;">      
         </div>
         <div class="cuadrado me-4 d-flex justify-content-center align-items-center" id="div_2" style="width: 200px; height: 200px; background-color: red;">
@@ -18,18 +18,18 @@
         </div>
         <div class="cuadrado d-flex justify-content-center align-items-center me-5" id="div_4" style="width: 200px; height: 200px; background-color: green;">
         </div>
-        <div>
-            <div class=" d-flex justify-content-center align-items-center text-center" id="key" style="width: 200px; height: 200px; margin-left: 75px; border: 1px solid black;">
-                <p class="ms-2">Presiona a,s o d y cambiare de color a rosado, naranja o celeste</p>
-            </div>
-            <p id="texto_1" class="ms-5 ps-4"></p>
-        </div>
     </div>
-    <div class="">
-        <p class="text-center d-flex justify-content-center ms-2 fs-3">Presiona q,w o e y cambiare a color amarillo, azul o café</p><p id="texto_2" class="ms-3"></p>
-        <div class="d-flex">
-            <div class=" d-flex justify-content-center align-items-center text-center flex-wrap" id="padre" ></div>
+    <div class="d-flex justify-content-center align-items-center flex-column" style="min-height: 20vh;">
+        <p class="ms-5 ps-1 fs-5 text-center">Presiona a,s o d y cambiare de color a rosado, naranja o celeste</p>
+        <div class=" d-flex align-items-center" id="key" style="width: 200px; height: 200px; border: 1px solid black;"></div>
+        <p id="texto_1" class="ms-2 ps-5"></p>
+    </div>
+    <div>
+        <div class="ms-5 ps-5" style="margin-left: 30px;">
+            <p class="text-center ms-5 ps-5 fs-5" style="margin-left: 40px;">Presiona q,w o e y aparecera un nuevo cuadrado de color amarillo, azul o café</p>
         </div>
+        <div class=" d-flex justify-content-center align-items-center text-center flex-wrap" id="padre" ></div>
+        <p id="texto_2" class="ms5 ps-5 text-center"></p>
     </div>
     <script src="./assets/js/4colores.js"></script>
 </body>
