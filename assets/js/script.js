@@ -1,13 +1,16 @@
 // function pintar(){
-// ele = document.getElementById("ele1")
-// ele.style.backgroundColor = 'yellow'
-// }
-// ele = document.getElementById("ele1")
-// ele.addEventListener("click", pintar);
+//     ele.style.backgroundColor = 'yellow'
+//     }
+//    
+//  const ele = document.getElementById("ele1")
+//  ele.addEventListener("click", pintar);    
 
-let pintar = (elemento, color = 'green') =>{
+const pintar = function (elemento, color='green'){
     elemento.style.backgroundColor = color;
 }
 
-const ele = document.getElementById("ele1");
-ele.addEventListener('click', () => pintar(ele, 'yellow'));
+const elem = document.getElementById('ele1');
+elem.addEventListener('click', function(){
+    pintar(elem, 'yellow');
+})
+
